@@ -4,11 +4,12 @@ In this repository provides scripts with which you can create a calendar dimensi
 The implementation is with set operations and includes the basic holidays we have in Greece and in the USA and EU Institutions. 
 It also contains the algorithms for finding Orthodox Easter and Catholic Easter, which is an important milestone in finding holidays on movable dates.
 
+# Script Parameters
 Before running, however, some values should be set in parameters that exist according to your needs, these are:
 
-Script Parameters
 
-# SET DATEFIRST	
+
+### SET DATEFIRST	
 We set the first day of the week. It is valid for Calendar & Fiscal year as the ISO year starts from Monday. 1 is Monday to 7 which is Sunday
 
 SET LANGUAGE US_ENGLISH	
