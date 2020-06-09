@@ -8,7 +8,7 @@ Before running, however, some values should be set in parameters that exist acco
 
 Script Parameters
 
-SET DATEFIRST	
+# SET DATEFIRST	
 We set the first day of the week. It is valid for Calendar & Fiscal year as the ISO year starts from Monday. 1 is Monday to 7 which is Sunday
 
 SET LANGUAGE US_ENGLISH	
