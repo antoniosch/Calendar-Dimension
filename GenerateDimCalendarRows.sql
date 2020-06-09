@@ -159,16 +159,16 @@ FROM    r4;
 WITH fy1
 AS
 (
-        SELECT DISTINCT CYYear,
-            FiscalYearStartDate = DATEADD(YEAR , IIF(@FiscalYearStartMonth>1,-1,0) ,DATEFROMPARTS(CYYear,@FiscalYearStartMonth,@FiscalYearStartMonthDay)),
-            FiscalYearEndDate   = DATEFROMPARTS(CYYear,@FiscalYearEndMonth,@FiscalYearEndMonthDay)
-        FROM #T
-    UNION
+	SELECT DISTINCT CYYear,
+	    FiscalYearStartDate = DATEADD(YEAR , IIF(@FiscalYearStartMonth>1,-1,0) ,DATEFROMPARTS(CYYear,@FiscalYearStartMonth,@FiscalYearStartMonthDay)),
+	    FiscalYearEndDate   = DATEFROMPARTS(CYYear,@FiscalYearEndMonth,@FiscalYearEndMonthDay)
+	FROM #T
+	UNION
         SELECT MIN (CYYear) - 1,
             DATEADD(YEAR , IIF(@FiscalYearStartMonth>1,-1,0) ,DATEFROMPARTS(MIN (CYYear) - 1,@FiscalYearStartMonth,@FiscalYearStartMonthDay)),
             DATEFROMPARTS(MIN (CYYear) - 1,@FiscalYearEndMonth,@FiscalYearEndMonthDay)
         FROM #T
-    UNION
+    	UNION
         SELECT MAX (CYYear) + 1,
             DATEADD(YEAR ,IIF(@FiscalYearStartMonth>1,-1,0) ,DATEFROMPARTS(MAX (CYYear) + 1,@FiscalYearStartMonth,@FiscalYearStartMonthDay)),
             DATEFROMPARTS(MAX (CYYear) + 1,@FiscalYearEndMonth,@FiscalYearEndMonthDay)
